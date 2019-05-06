@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-Hans">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
       padding: 0;
       box-sizing: border-box;
     }
+
     .g-button {
       --button-height: 32px;
       --font-size: 14px;
@@ -20,17 +22,28 @@
       --border-color-hover: #666;
       --button-active-bg: #eee;
     }
+
     #app {
       margin: 20px;
     }
+
     body {
       font-size: var(--font-size);
     }</style>
+  <style>.icon {
+      width: 1em;
+      height: 1em;
+    }</style>
 <link rel="stylesheet" href="/app.a6a4d504.css"></head>
+
 <body>
   <div id="app">
-    <g-button></g-button>
+    <g-button icon="settings">按钮</g-button>
+    <g-button>按钮</g-button>
+    <g-button icon="settings" icon-position="right">按钮</g-button>
   </div>
-<script src="/app.a6a4d504.js"></script>
+  <script src="/app.a6a4d504.js"></script>
+  <script src="//at.alicdn.com/t/font_1176650_8ns21bvlbgf.js"></script>
 </body>
+
 </html>
