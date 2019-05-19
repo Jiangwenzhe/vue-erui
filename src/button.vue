@@ -56,20 +56,20 @@ export default {
     &:focus {
       outline: none;
     }
-    > .content {
+    .content {
       order: 2;
     }
-    > .icon {
+    .icon {
       order: 1;
       margin-right: .1em;
     }
     &.icon-right {
-      > .icon {
+      .icon {
         order: 2;
         margin-right: 0;
         margin-left: .1em;
       }
-      > .content {
+      .content {
       order: 1;
       }
     }
