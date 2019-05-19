@@ -1,7 +1,9 @@
+// @click="$emit('click')"的意思是：
 <template>
-  <button class="g-button" :class="{[`icon-${iconPosition}`]: true}">
-    <g-icon v-if="icon" class="icon" :name="icon"></g-icon>
-    <g-icon name="loading" class="loading"></g-icon>
+  <button class="g-button" :class="{[`icon-${iconPosition}`]: true}"
+    @click="$emit('click')">
+    <g-icon v-if="icon && !loading"  class="icon" :name="icon"></g-icon>
+    <g-icon name="loading" v-if="loading" class="loading icon"></g-icon>
     <div class="content">
       <slot></slot>
     </div>
@@ -9,9 +11,14 @@
 </template>
 
 <script>
+
 export default {
   props: {
     icon: {},
+    loading: {
+      type: Boolean,
+      default: false
+    },
     iconPosition: {
       type: String,
       default: 'left',
@@ -39,6 +46,7 @@ export default {
     justify-content: center;
     align-items: center;
     vertical-align: middle;
+    cursor: pointer;
     &:hover {
       border-color: var(--border-color-hover);
     }
