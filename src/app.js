@@ -10,3 +10,15 @@ Vue.component('g-button-group', ButtonGroup)
 new Vue({
   el: '#app',
 })
+
+// 我们来写一写单元测试
+{
+  const Constructor = Vue.extend(Button)
+  const button = new Constructor({
+    propsData: {
+      icon: 'settings'
+    }
+  })
+  button.$mount('#test')
+
+}
