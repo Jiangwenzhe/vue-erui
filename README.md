@@ -1,5 +1,7 @@
 # vue-erui
 
+[![Build Status](https://travis-ci.org/Jiangwenzhe/vue-erui.svg?branch=master)](https://travis-ci.org/Jiangwenzhe/vue-erui)
+
 ## 介绍
 
 ## 开始使用
