@@ -1,17 +1,18 @@
 <template>
-  <svg class="g-icon">
+  <svg class="er-icon">
     <use :xlink:href="`#i-${name}`"></use>
   </svg>
 </template>
 
 <script>
 export default {
+  name: 'er-icon',
   props: ['name']
 }
 </script>
 
 <style lang="scss" >
-  .g-icon {
+  .er-icon {
     width: 1em;
     height: 1em;
   }

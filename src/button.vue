@@ -1,6 +1,6 @@
 // @click="$emit('click')"的意思是：
 <template>
-  <button class="g-button" :class="{[`icon-${iconPosition}`]: true}"
+  <button class="er-button" :class="{[`icon-${iconPosition}`]: true}"
     @click="$emit('click')">
     <g-icon v-if="icon && !loading"  class="icon" :name="icon"></g-icon>
     <g-icon name="loading" v-if="loading" class="loading icon"></g-icon>
@@ -13,6 +13,7 @@
 <script>
 import Icon from './icon'
 export default {
+  name: 'er-button',
   components: {
     'g-icon': Icon
   },
@@ -33,12 +34,12 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
-  .g-button {
+  .er-button {
     font-size: var(--font-size);
     height: var(--button-height);
     padding: 0 1em;

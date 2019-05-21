@@ -1,11 +1,12 @@
 <template>
-  <div class="g-button-group">
+  <div class="er-button-group">
     <slot></slot>
   </div>
 </template>
 
 <script>
 export default {
+  name: 'er-button-group',
   // 监测子元素是否出现问题
   mounted() {
     for(let node of this.$el.children) {
@@ -18,10 +19,10 @@ export default {
 </script>
 
 <style lang="scss">
-  .g-button-group {
+  .er-button-group {
     display: inline-flex;
     vertical-align: middle;
-    .g-button {
+    .er-button {
       border-radius: 0;
       &:not(:first-child) {
         margin-left: -1px;
