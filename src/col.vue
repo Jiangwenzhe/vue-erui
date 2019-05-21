@@ -1,7 +1,7 @@
 <template>
   <div class="col"
-    :class="[`col-${span}`, offset && `offset-${offset}`]"
-    :style="{paddingLeft: gap/2 +'px', paddingRight: gap/2+ 'px'}"
+    :class="colClasses"
+    :style="colStyle"
   >
     <slot></slot>
   </div>
@@ -20,7 +20,21 @@ export default {
   },
   data() {
     return {
-      gap: 0
+      gap: 0,
+    }
+  },
+  computed: {
+    colClasses() {
+      return [
+        this.span && `col-${this.span}`,
+        this.offset && `offset-${this.offset}`
+      ]
+    },
+    colStyle() {
+      return {
+        paddingLeft: this.gap/2 + 'px',
+        paddingRight: this.gap/2 + 'px'
+      }
     }
   }
 }

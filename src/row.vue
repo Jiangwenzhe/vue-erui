@@ -1,5 +1,5 @@
 <template>
-  <div class="row" :style="{marginLeft: -gap/2+'px', marginRight: -gap/2+'px'}">
+  <div class="row" :style="rowStyle">
     <slot></slot>
   </div>
 </template>
@@ -10,6 +10,15 @@ export default {
   props: {
     gap: {
       type:[Number, String]
+    }
+  },
+  computed: {
+    rowStyle() {
+      let gap = this.gap
+      return {
+        marginLeft: -gap/2+'px',
+        marginRight: -gap/2+'px'
+      }
     }
   },
   mounted() {
@@ -23,6 +32,5 @@ export default {
 <style lalng="scss" scoped>
   .row {
     display: flex;
-    margin: 0 -10px;
   }
 </style>
