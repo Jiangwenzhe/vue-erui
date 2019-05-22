@@ -16,7 +16,7 @@ export default {
     },
     offset: {
       type: [Number, String]
-    },
+  },
   },
   data() {
     return {
@@ -43,8 +43,8 @@ export default {
 <style lang="scss" scoped>
   .col {
     height: 100px;
-    width: 50%;
-    border: 1px solid red;
+    // width: 50%;
+    // border: 1px solid red;
 
     $class-prefix: col-;
     @for $n from 1 through 24 {
