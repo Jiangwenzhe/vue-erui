@@ -1,6 +1,6 @@
 <template>
   <div class="col"
-    :class="colClasses"
+    :class="colClass"
     :style="colStyle"
   >
     <slot></slot>
@@ -52,15 +52,25 @@ export default {
     }
   },
   computed: {
-    colClasses() {
+    colClass() {
       let { span, offset, pad, spc, pc, bpc } = this
+      let createColClass = (span_offset, infix) => {
+        if(!span_offset) return []
+        let arr = []
+        if(span_offset.span) {
+          arr.push(`col-${infix}${span_offset.span}`)
+        }
+        if(span_offset.offset) {
+          arr.push(`offset-${infix}${span_offset.offset}`)
+        }
+        return arr
+      }
       return [
-        span && `col-${span}`,
-        offset && `offset-${offset}`,
-        ...(pad ? [`col-pad-${pad.span}`]: []),
-        ...(spc ? [`col-small-pc-${spc.span}`]: []),
-        ...(pc ? [`col-pc-${pc.span}`]: []),
-        ...(bpc ? [`col-big-pc-${bpc.span}`]: []),
+        ...createColClass({span, offset}, ''),
+        ...createColClass(pad, 'pad-'),
+        ...createColClass(spc, 'small-pc-'),
+        ...createColClass(pc, 'pc-'),
+        ...createColClass(bpc, 'big-pc-'),
       ]
     },
     colStyle() {
