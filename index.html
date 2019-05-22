@@ -40,7 +40,6 @@
   </style>
   <style>
       .demoBox {
-        height: 50px;
         background: grey;
         border: 1px solid red;
       }
@@ -63,6 +62,24 @@
       <er-input value="三" readonly></er-input>
       <er-input value="三csdcs" @change="inputChange"></er-input>
       <er-input value="三csdcs" error="xxjlsa"></er-input>
+    </div>
+    <div style="border: 1px solid black">
+      <er-row gap="20">
+        <er-col span="2"
+          :phone="{span:12}"
+          :pad="{span:8}"
+          :spc="{span:4}"
+          :pc="{span:2}"
+          :bpc="{span:1}"
+        >1</er-col>
+        <er-col span="22"
+          :phone="{span:12}"
+          :pad="{span:16}"
+          :spc="{span:20}"
+          :pc="{span:22}"
+          :bpc="{span:23}"
+        >11</er-col>
+      </er-row>
     </div>
   </div>
   <script src="./src/app.js"></script>
