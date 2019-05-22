@@ -28,10 +28,6 @@ export default {
     offset: {
       type: [Number, String]
     },
-    phone: {
-      type: Object,
-      validator,
-    },
     pad: {
       type: Object,
       validator,
@@ -57,11 +53,10 @@ export default {
   },
   computed: {
     colClasses() {
-      let { span, offset, phone, pad, spc, pc, bpc } = this
+      let { span, offset, pad, spc, pc, bpc } = this
       return [
         span && `col-${span}`,
         offset && `offset-${offset}`,
-        ...(phone ? [`col-phone-${phone.span}`]: []),
         ...(pad ? [`col-pad-${pad.span}`]: []),
         ...(spc ? [`col-small-pc-${spc.span}`]: []),
         ...(pc ? [`col-pc-${pc.span}`]: []),
@@ -93,24 +88,8 @@ export default {
       }
     }
 
-    // 为手机大小的屏幕匹配的class
-    @media (max-width: 576px) {
-      $class-prefix: col-phone-;
-      @for $n from 1 through 24 {
-        &.#{$class-prefix}#{$n} {
-          width: ($n / 24) * 100%
-        }
-      }
-      $class-prefix: offset-phone-;
-      @for $n from 1 through 24 {
-        &.#{$class-prefix}#{$n} {
-          margin-left: ($n / 24) * 100%
-        }
-      }
-    }
-
     // 为pad大小的屏幕匹配的class
-    @media (min-width: 577px) and (max-width: 768px) {
+    @media (min-width: 577px){
       $class-prefix: col-pad-;
       @for $n from 1 through 24 {
         &.#{$class-prefix}#{$n} {
@@ -126,7 +105,7 @@ export default {
     }
 
     // 为小电脑匹配的 class
-    @media (min-width: 769px) and (max-width: 992px) {
+    @media (min-width: 769px) {
       $class-prefix: col-small-pc-;
       @for $n from 1 through 24 {
         &.#{$class-prefix}#{$n} {
@@ -141,14 +120,13 @@ export default {
       }
     }
 
-    @media (min-width: 993px) and (max-width: 1200px) {
+    @media (min-width: 993px) {
       $class-prefix: col-pc-;
       @for $n from 1 through 24 {
         &.#{$class-prefix}#{$n} {
           width: ($n / 24) * 100%
         }
       }
-
       $class-prefix: offset-pc-;
       @for $n from 1 through 24 {
         &.#{$class-prefix}#{$n} {
@@ -156,6 +134,7 @@ export default {
         }
       }
     }
+
     @media (min-width: 1201px) {
       $class-prefix: col-big-pc-;
       @for $n from 1 through 24 {

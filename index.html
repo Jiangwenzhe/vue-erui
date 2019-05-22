@@ -39,16 +39,17 @@
     }
   </style>
   <style>
-      .demoBox {
-        background: grey;
-        border: 1px solid red;
-      }
-    </style>
+    .demo {
+      background: #ddd;
+      border: 1px solid #666;
+      height: 100px;
+    }
+  </style>
 </head>
 
 <body>
   <div id="app">
-    <er-button icon="settings" :loading="true">按钮</er-button>
+    <!-- <er-button icon="settings" :loading="true">按钮</er-button>
     <er-button>按钮</er-button>
     <er-button icon="settings" icon-position="right">按钮</er-button>
     <er-button-group>
@@ -62,25 +63,28 @@
       <er-input value="三" readonly></er-input>
       <er-input value="三csdcs" @change="inputChange"></er-input>
       <er-input value="三csdcs" error="xxjlsa"></er-input>
-    </div>
-    <div style="border: 1px solid black">
-      <er-row gap="20">
-        <er-col span="2"
-          :phone="{span:12}"
-          :pad="{span:8}"
-          :spc="{span:4}"
-          :pc="{span:2}"
-          :bpc="{span:1}"
-        >1</er-col>
-        <er-col span="22"
-          :phone="{span:12}"
-          :pad="{span:16}"
-          :spc="{span:20}"
-          :pc="{span:22}"
-          :bpc="{span:23}"
-        >11</er-col>
-      </er-row>
-    </div>
+    </div> -->
+    <er-row>
+      <er-col span="24" :pad="{span:12}" :spc="{span:8}">
+        <div class="demo"></div>
+      </er-col>
+      <er-col span="24" :pad="{span:12}" :spc="{span:8}">
+        <div class="demo"></div>
+      </er-col>
+      <er-col span="24" :pad="{span:12}" :spc="{span:8}">
+        <div class="demo"></div>
+      </er-col>
+      <er-col span="24" :pad="{span:12}" :spc="{span:8}">
+        <div class="demo"></div>
+      </er-col>
+      <er-col span="24" :pad="{span:12}" :spc="{span:8}">
+        <div class="demo"></div>
+      </er-col>
+      <er-col span="24" :pad="{span:12}" :spc="{span:8}">
+        <div class="demo"></div>
+      </er-col>
+
+
   </div>
   <script src="./src/app.js"></script>
   <script src="//at.alicdn.com/t/font_1176650_0st809f2iq6f.js"></script>
