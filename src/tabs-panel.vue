@@ -34,10 +34,3 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-  .tabs-panel {
-    &.active {
-      // background: red;
-    }
-  }
-</style>
