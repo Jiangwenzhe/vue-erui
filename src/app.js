@@ -10,6 +10,11 @@ import Header from './header.vue'
 import Content from './content.vue'
 import Sider from './sider.vue'
 import Footer from './footer.vue'
+import Tabs from './tabs.vue'
+import TabsHeader from './tabs-header.vue'
+import TabsBody from './tabs-body.vue'
+import TabsItem from './tabs-item.vue'
+import TabsPanel from './tabs-panel.vue'
 
 Vue.component('er-button', Button)
 Vue.component('er-icon', Icon)
@@ -22,9 +27,16 @@ Vue.component('er-header', Header)
 Vue.component('er-content', Content)
 Vue.component('er-sider', Sider)
 Vue.component('er-footer', Footer)
+Vue.component('er-tabs', Tabs)
+Vue.component('er-tabs-header', TabsHeader)
+Vue.component('er-tabs-body', TabsBody)
+Vue.component('er-tabs-item', TabsItem)
+Vue.component('er-tabs-panel', TabsPanel)
 
 new Vue({
   el: '#app',
-  methods: {
-  }
+  data: {
+    selectedTab: 'sports',
+  },
+  methods: {}
 })

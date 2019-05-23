@@ -25,7 +25,7 @@
     }
 
     #app {
-      margin: 20px;
+      /* margin: 20px; */
     }
 
     body {
@@ -56,14 +56,31 @@
 
 <body>
   <div id="app">
-    <er-layout style="height: 100vh;">
-      <er-sider>sider</er-sider>
-      <er-layout>
-        <er-header>header</er-header>
-        <er-content>content</er-content>
-        <er-footer>footer</er-footer>
-      </er-layout>
-    </er-layout>
+    <er-tabs :selected.sync="selectedTab">
+      <er-tabs-header>
+        <er-tabs-item name="woman" disabled>
+          美女
+        </er-tabs-item>
+        <er-tabs-item name="finance">
+          财经
+        </er-tabs-item>
+        <er-tabs-item name="sports">
+          体育
+        </er-tabs-item>
+        <template slot="actions"><button>xsa</button></template>
+      </er-tabs-header>
+      <er-tabs-body>
+        <er-tabs-panel name="woman">
+          美女相关咨询
+        </er-tabs-panel>
+        <er-tabs-panel name="finance">
+          财经相关咨询
+        </er-tabs-panel>
+        <er-tabs-panel name="sports">
+          体育相关咨询
+        </er-tabs-panel>
+      </er-tabs-body>
+    </er-tabs>
   </div>
   <script src="./src/app.js"></script>
   <script src="//at.alicdn.com/t/font_1176650_0st809f2iq6f.js"></script>
