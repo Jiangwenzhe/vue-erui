@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper" :class="{'error': error}">
-    <input :value="value" type="text" :disabled="disabled" :readonly="readonly"
+    <input :value="value" :disabled="disabled" :readonly="readonly"
      @change="$emit('change', $event.target.value)"
      @input="$emit('input', $event.target.value)"
      @focus="$emit('focus', $event.target.value)"
@@ -57,6 +57,13 @@ export default {
     &.error {
       input {
         border-color: $red;
+        color: $red;
+        &:hover {
+          border-color: $red;
+        }
+        &:focus {
+          box-shadow: none;
+        }
       }
     }
     input {

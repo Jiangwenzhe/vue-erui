@@ -50,12 +50,11 @@ export default {
   $disabled-text-color: #BFBFBF;
   .tabs-item {
     flex-shrink: 0;
-    padding: .75em 1.1em;
+    padding: .75em 1.0em;
     cursor: pointer;
     display: flex;
     align-items: center;
     &.active {
-      font-weight: bold;
       color: $blue;
     }
     &.disabled {

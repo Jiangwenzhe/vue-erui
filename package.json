@@ -1,12 +1,14 @@
 {
   "name": "vue-erui",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "尝试去做的一个ui框架",
   "main": "index.js",
   "scripts": {
     "dev-test": "parcel watch test/* --no-cache & karma start",
     "test": "parcel build test/* --no-minify && karma start --single-run",
-    "start": "parcel index.html"
+    "start": "parcel index.html",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
   "repository": {
     "type": "git",
@@ -23,6 +25,7 @@
   },
   "homepage": "https://github.com/Jiangwenzhe/vue-erui#readme",
   "dependencies": {
+    "sass-loader": "^7.1.0",
     "vue": "^2.6.10",
     "vue-hot-reload-api": "^2.3.3"
   },
@@ -40,7 +43,8 @@
     "parcel-bundler": "^1.12.3",
     "sinon": "^7.3.2",
     "sinon-chai": "^3.3.0",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.10",
+    "vuepress": "^0.14.11"
   },
   "alias": {
     "vue": "./node_modules/vue/dist/vue.common.js"

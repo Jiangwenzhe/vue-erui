@@ -11,7 +11,7 @@ export default {
   mounted() {
     for(let node of this.$el.children) {
       if(node.nodeName.toLowerCase() !== 'button') {
-        console.warn(`<g-button-group> 的子元素只能是 <g-button></g-button> ,但是你有输入 ${node.nodeName.toLowerCase()}`)
+        console.warn(`<er-button-group> 的子元素只能是 <er-button></er-button> ,但是你有输入 ${node.nodeName.toLowerCase()}`)
       }
     }
   }
@@ -19,6 +19,7 @@ export default {
 </script>
 
 <style lang="scss">
+  $border-radius: 4px;
   .er-button-group {
     display: inline-flex;
     vertical-align: middle;
@@ -28,12 +29,12 @@ export default {
         margin-left: -1px;
       }
       &:first-child {
-        border-top-left-radius: var(--border-radius);
-        border-bottom-left-radius: var(--border-radius);
+        border-top-left-radius: $border-radius;
+        border-bottom-left-radius: $border-radius;
       }
       &:last-child {
-        border-top-right-radius: var(--border-radius);
-        border-bottom-right-radius: var(--border-radius);
+        border-top-right-radius: $border-radius;
+        border-bottom-right-radius: $border-radius;
       }
       &:hover {
         position: relative;

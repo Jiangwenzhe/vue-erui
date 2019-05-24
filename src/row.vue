@@ -33,6 +33,7 @@ export default {
   },
   mounted() {
     this.$children.forEach(vm => {
+      console.log(vm.$el)
       vm.gap = this.gap
     })
   }

@@ -1,10 +1,10 @@
 <template>
   <div class="tabs-header">
     <slot></slot>
+    <div class="line" ref="line"></div>
     <div class="actions-wrapper">
       <slot name="actions"></slot>
     </div>
-    <div class="line" ref="line"></div>
   </div>
 </template>
 
@@ -14,7 +14,10 @@ export default {
   inject: ['eventBus'],
   mounted() {
     this.eventBus.$on('update:selected', (tabName, tabsItem)=>{
-      let {width, height, top, left} = tabsItem.$el.getBoundingClientRect()
+      let width = tabsItem.$el.offsetWidth
+      let left = tabsItem.$el.offsetLeft
+       console.log(width, '...width')
+       console.log(left, '...left')
       this.$refs.line.style.width = `${width}px`
       this.$refs.line.style.left = `${left}px`
     })
